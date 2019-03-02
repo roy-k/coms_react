@@ -26,7 +26,7 @@ export const navOptions: Array<NavItem> = [
                 sideSubMenu: [
                     {
                         title: 'list',
-                        path: '/reactFeatures/list',
+                        path: '/reactFeatures/longlist',
                     },
                 ],
             },
