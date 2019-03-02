@@ -5,6 +5,9 @@ import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
 
 import LongList from '../pages/longList'
 
+import UseState from '../pages/hooks/useState'
+import UseEffect from '../pages/hooks/useEffect'
+
 import { Layout} from 'antd'
 
 const { Content } = Layout
@@ -20,6 +23,8 @@ export default () => {
                 }}
             >
             <Switch>
+                <Route path='/reactFeatures/hooks/useState' component={UseState}/>
+                <Route path='/reactFeatures/hooks/useEffect' component={UseEffect}/>
                 <Route path='/reactFeatures/longlist' component={LongList}/>
             </Switch>
         </Content>

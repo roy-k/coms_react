@@ -21,6 +21,20 @@ export const navOptions: Array<NavItem> = [
         path: '/reactFeatures',
         sideMenu: [
             {
+                title: 'hooks',
+                icon: 'user',
+                sideSubMenu: [
+                    {
+                        title: 'useState',
+                        path: '/reactFeatures/hooks/useState',
+                    },
+                    {
+                        title: 'useEffect',
+                        path: '/reactFeatures/hooks/useEffect',
+                    },
+                ],
+            },
+            {
                 title: '列表类',
                 icon: 'user',
                 sideSubMenu: [
