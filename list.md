@@ -19,9 +19,26 @@
     - mock
     - jest
 
+4. 其他业务相关
+
+    - echart
 
 ## todo
 
-1. router
+1. frame
 
-2. mock
+2. router
+
+3. mock
+
+4. 主题
+
+## plan
+
+1. 上方导航分业务
+
+2. 左侧菜单分示例, 配置问题
+
+    - layout 组件细分
+
+

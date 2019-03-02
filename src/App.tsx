@@ -1,21 +1,20 @@
-import React from 'react';
-import { BrowserRouter as Router, Route, Link } from "react-router-dom"
-// import logo from './logo.svg';
-// import './App.css';
-// import './common/css/app.sass'
+import React from 'react'
+import { BrowserRouter as Router } from 'react-router-dom'
+
 import './common/css/app.styl'
 
-import { Button } from 'antd';
+import Layout from './container/layout/layout'
 
 class App extends React.Component {
-  render() {
-    return (
-      <div className="App">
-        init
-        <Button type="primary">Button</Button>
-      </div>
-    );
-  }
+    render() {
+        return (
+            <div className='App'>
+                <Router>
+                    <Layout />
+                </Router>
+            </div>
+        )
+    }
 }
 
-export default App;
+export default App
