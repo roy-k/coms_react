@@ -32,6 +32,10 @@ export const navOptions: Array<NavItem> = [
                         title: 'useEffect',
                         path: '/reactFeatures/hooks/useEffect',
                     },
+                    {
+                        title: 'useContext',
+                        path: '/reactFeatures/hooks/useContext',
+                    },
                 ],
             },
             {

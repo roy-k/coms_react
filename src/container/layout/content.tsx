@@ -7,6 +7,7 @@ import LongList from '../pages/longList'
 
 import UseState from '../pages/hooks/useState'
 import UseEffect from '../pages/hooks/useEffect'
+import UseContext from '../pages/hooks/useContext'
 
 import { Layout} from 'antd'
 
@@ -25,6 +26,8 @@ export default () => {
             <Switch>
                 <Route path='/reactFeatures/hooks/useState' component={UseState}/>
                 <Route path='/reactFeatures/hooks/useEffect' component={UseEffect}/>
+                <Route path='/reactFeatures/hooks/useContext' component={UseContext}/>
+
                 <Route path='/reactFeatures/longlist' component={LongList}/>
             </Switch>
         </Content>
