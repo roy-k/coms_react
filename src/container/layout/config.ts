@@ -51,6 +51,22 @@ export const navOptions: Array<NavItem> = [
         ],
     },
     {
+        title: 'type script',
+        path: '/ts',
+        sideMenu: [
+            {
+                title: '组件相关语法',
+                icon: 'user',
+                sideSubMenu: [
+                    {
+                        title: '类组件',
+                        path: '/ts/classComponent',
+                    },
+                ],
+            },
+        ],
+    },
+    {
         title: 'Data Visualization',
         path: '/dataVisualization',
         sideMenu: [

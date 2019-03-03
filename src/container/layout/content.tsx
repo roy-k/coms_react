@@ -9,6 +9,8 @@ import UseState from '../pages/hooks/useState'
 import UseEffect from '../pages/hooks/useEffect'
 import UseContext from '../pages/hooks/useContext'
 
+import ClassComponent from '../pages/typeScript/classComponent'
+
 import { Layout} from 'antd'
 
 const { Content } = Layout
@@ -27,6 +29,9 @@ export default () => {
                 <Route path='/reactFeatures/hooks/useState' component={UseState}/>
                 <Route path='/reactFeatures/hooks/useEffect' component={UseEffect}/>
                 <Route path='/reactFeatures/hooks/useContext' component={UseContext}/>
+
+                <Route path='/ts/classComponent' component={ClassComponent}/>
+
 
                 <Route path='/reactFeatures/longlist' component={LongList}/>
             </Switch>

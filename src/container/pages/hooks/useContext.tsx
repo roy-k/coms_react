@@ -1,17 +1,14 @@
-import React, { useState, useEffect, useContext } from 'react'
+import React, { useState, useEffect, useContext, SFC, MouseEvent  } from 'react'
 
 import { Button } from 'antd'
 
 const ThemeContext = React.createContext('dark')
 
-interface EventHandle {
-    (): void
-}
-interface UserProps {
-    onClick: EventHandle
+interface IProps {
+  onClick (event: MouseEvent<HTMLElement>): void,
 }
 
-const ContextUser = ({ onClick }: UserProps) => {
+const ContextUser: SFC<IProps> = ({ onClick }) => {
 
     // useContext 传入 context, 即可直接使用其 value
     const context:string = useContext(ThemeContext)
@@ -30,17 +27,15 @@ const ContextUser = ({ onClick }: UserProps) => {
     )
 }
 
-interface ContainerState {
-    theme: string
-}
+const initialState = {theme: 'dark'}
 
-class UseContextContainer extends React.Component {
-    readonly state: ContainerState = {
-        theme: 'dark',
-    }
+type IState = Readonly<typeof initialState>
+
+class UseContextContainer extends React.Component<object, IState> {
+    readonly state: IState = initialState
 
     toggleTheme = () => {
-        this.setState(({ theme }:ContainerState) => ({ theme: theme === 'dark' ? 'light' : 'dark' }))
+        this.setState(({ theme }) => ({ theme: theme === 'dark' ? 'light' : 'dark' }))
     }
 
     render() {
