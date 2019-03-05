@@ -39,12 +39,12 @@ export const navOptions: Array<NavItem> = [
                 ],
             },
             {
-                title: '列表类',
+                title: '优化类',
                 icon: 'user',
                 sideSubMenu: [
                     {
-                        title: 'list',
-                        path: '/reactFeatures/longlist',
+                        title: '长列表',
+                        path: '/reactFeatures/optimize/longList',
                     },
                 ],
             },
@@ -55,9 +55,13 @@ export const navOptions: Array<NavItem> = [
         path: '/ts',
         sideMenu: [
             {
-                title: '组件相关语法',
+                title: '相关语法',
                 icon: 'user',
                 sideSubMenu: [
+                    {
+                        title: 'ts 语法',
+                        path: '/ts/syntax',
+                    },
                     {
                         title: '类组件',
                         path: '/ts/classComponent',

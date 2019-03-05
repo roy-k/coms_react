@@ -1,15 +1,31 @@
-import React from 'react'
+import React, {lazy, Suspense} from 'react'
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
 
-// import { NavItem } from './config'
+const genAsyncComponent = (WrapComponent: any) => () => (
+    <Suspense  fallback={<div>Loading...</div>}>
+        <WrapComponent />
+    </Suspense>
+)
 
-import LongList from '../pages/longList'
 
-import UseState from '../pages/hooks/useState'
-import UseEffect from '../pages/hooks/useEffect'
-import UseContext from '../pages/hooks/useContext'
+const UseState = lazy(() => import('../pages/hooks/useState'));
+const UseEffect = lazy(() => import('../pages/hooks/useEffect'));
+const UseContext = lazy(() => import('../pages/hooks/useContext'));
 
-import ClassComponent from '../pages/typeScript/classComponent'
+const LongList = lazy(() => import('../pages/optimize/longList'));
+
+const SyntaxComponent = lazy(() => import('../pages/typeScript/syntax'));
+const ClassComponent = lazy(() => import('../pages/typeScript/classComponent'));
+
+const AsyncUseState = genAsyncComponent(UseState)
+const AsyncUseEffect = genAsyncComponent(UseEffect)
+const AsyncUseContext = genAsyncComponent(UseContext)
+
+const AsyncLongList = genAsyncComponent(LongList)
+
+const AsyncSyntaxComponent = genAsyncComponent(SyntaxComponent)
+const AsyncClassComponent = genAsyncComponent(ClassComponent)
+
 
 import { Layout} from 'antd'
 
@@ -26,14 +42,14 @@ export default () => {
                 }}
             >
             <Switch>
-                <Route path='/reactFeatures/hooks/useState' component={UseState}/>
-                <Route path='/reactFeatures/hooks/useEffect' component={UseEffect}/>
-                <Route path='/reactFeatures/hooks/useContext' component={UseContext}/>
+                <Route path='/reactFeatures/hooks/useState' component={AsyncUseState}/>
+                <Route path='/reactFeatures/hooks/useEffect' component={AsyncUseEffect}/>
+                <Route path='/reactFeatures/hooks/useContext' component={AsyncUseContext}/>
 
-                <Route path='/ts/classComponent' component={ClassComponent}/>
+                <Route path='/ts/syntax' component={AsyncSyntaxComponent}/>
+                <Route path='/ts/classComponent' component={AsyncClassComponent}/>
 
-
-                <Route path='/reactFeatures/longlist' component={LongList}/>
+                <Route path='/reactFeatures/optimize/longList' component={AsyncLongList}/>
             </Switch>
         </Content>
     )
