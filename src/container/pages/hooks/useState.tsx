@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 
 import { Button } from 'antd'
 
+import MIcon from '../../../component/icon'
+
 export default () => {
     // 第一个参数为属性, useState 传入参数为初始值
     // 第二个参数 setStatus, 与status配对, 用于更新此属性, 无需使用{status}, 只需要传输更新的值
@@ -18,6 +20,7 @@ export default () => {
     return (
         <div>
             <div>
+                <MIcon icon="icon-wodeye_diqu"/>
                 <Button
                     onClick={() => {
                         setCount(count + 1)
