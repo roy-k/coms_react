@@ -24,3 +24,10 @@
 
 
 5. webpack 增量打包
+
+
+## tips
+
+1. 手写代码补全, vscode package
+
+    full react imp snippis
